@@ -25,12 +25,11 @@ const userSchema = mongoose.Schema({
     },
     profilePicture:{
         imageUrl:{
-            type:String,
-            required: true
+            type:String
         },
         publicId:{
             type: String, 
-            required: true}
+        }
     }
 },{timestamps: true});
 
