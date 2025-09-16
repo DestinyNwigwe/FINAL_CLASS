@@ -1,4 +1,5 @@
 require('dotenv').config();
+
 const express= require('express');
 const PORT = process.env.PORT || 3000;
 const mongoose = require('mongoose')
@@ -32,5 +33,5 @@ mongoose.connect(DB_URI).then(() => {
         console.log(`Server running on port ${PORT}`);
     })
 }).catch((err) => {
-    console.log("DB connection error: ", err);
+    console.log("DB connection error: ", err.message);
 })
