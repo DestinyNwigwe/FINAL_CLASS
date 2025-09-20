@@ -8,13 +8,16 @@ const DB_URI = process.env.DB_URI
 
 const userRouter = require('./routes/user');
 
+const productRoutes = require('./routes/productRoute')
+
 
 
 const app = express();
 app.use(express.json());
 app.use( cors())
 
-app.use('/api/v1', userRouter);
+app.use('/api/v1', userRouter)
+app.use('/api/v1', productRoutes)
 
 app.use((error,req,res,next) =>{
     if(error) {
