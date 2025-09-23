@@ -30,7 +30,7 @@ exports.createProduct = async (req, res) => {
             });
         }
 
-    } catch (error) {
+    } catch (error) { 
         console.log(error.message)
         res.status(500).json({ error: error.message })
     }

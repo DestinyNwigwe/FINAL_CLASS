@@ -1,3 +1,5 @@
+const { forgetPassword } = require("../controllers/user")
+
 const html=(verifyLink,firstName)=>{
     return `
     <!DOCTYPE html>
@@ -71,11 +73,11 @@ const html=(verifyLink,firstName)=>{
                 <h1>Goodbye from The Curve Africa!</h1>
             </div>
             <div class="content">
-                <p>Hello ${firstName},</p>
-                <p>Thank you for stressing me out in this cohort . We are excited to have you graduate from The curve asapu.</p>
-                <p>Please click the button  to graduate:</p>
+                <p>Hello ${fullName},</p>
+                <p>We are privilledge to tell u that u are close to retrieving your password</p>
+                <p>Please click the button  to Forget password</p>
                 <div class="button-container">
-                    <a href="${verifyLink}" class="button">Graduate</a>
+                    <a href="${verifyLink}" class="button">Forget Password</a>
                 </div>
                 <p>If you did not sign up on our platform, kindly ignore this email.</p>
                 <p>Best regards,<br>MR Josh</p>
@@ -91,4 +93,4 @@ const html=(verifyLink,firstName)=>{
     `
 }
 
-module.exports=html
+module.exports= {forgetPassword}

@@ -3,12 +3,14 @@ const express= require('express');
 const PORT = process.env.PORT || 3000;
 const mongoose = require('mongoose')
 const cors = require('cors')
+const jwt = require('jsonwebtoken')
 
 const DB_URI = process.env.DB_URI
 
 const userRouter = require('./routes/user');
 
-const productRoutes = require('./routes/productRoute')
+const productRoutes = require('./routes/productRoute');
+const { JsonWebTokenError, verify } = require('jsonwebtoken');
 
 
 
@@ -18,6 +20,18 @@ app.use( cors())
 
 app.use('/api/v1', userRouter)
 app.use('/api/v1', productRoutes)
+
+
+
+// res.send("checking token")
+// const token = req.headers.authorization (" ")[1]
+// jwt.verify(token, "daniel", (err)=>{
+//     if (err) {
+//         return res.status(400).json({err:err.message})
+//     }
+// })
+// console.log(token);
+
 
 app.use((error,req,res,next) =>{
     if(error) {

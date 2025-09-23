@@ -18,10 +18,18 @@ const userSchema = mongoose.Schema({
         type: Number,
         required: true
     },
-    phoneNumber:{
+    // phoneNumber:{
+    //     type: String,
+    //     required: true,
+    //     unique: true
+    // },
+    isVerified:{
+    type: String,
+    required:true
+    },
+    token:{
         type: String,
-        required: true,
-        unique: true
+        // required:true
     },
     profilePicture:{
         imageUrl:{
